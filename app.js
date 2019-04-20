@@ -8,6 +8,8 @@ var emailSenderApp = require('./send-mail');
 var emailSenderAppAwareness = require('./send-mail-awareness');
 var emailSenderAppWithAttachment = require('./send-mail-to-myself-with-attachment');
 var emailSenderAppWithAttachmentAwareness = require('./send-mail-to-myself-with-attachment-awareness');
+var contactmail = require('./send-mail-contact-us');
+var contactmailtoUser = require('./send-mail-contact-us-user');
 
 var port = process.env.PORT || 3000;
 
@@ -68,6 +70,22 @@ app.post('/awarenessreg', urlencodedParser, function(req, res){
 
   //Send Email to registered person
   emailSenderAppAwareness(req.body);
+  res.render('redirectingSite.ejs');
+});
+
+app.post('/contactreq', urlencodedParser, function(req, res){
+
+
+
+  //Send Email to mySelf
+  contactmail(req.body);
+
+  //Send Email to User
+  contactmailtoUser(req.body);
+
+  //Send Email to registered person
+  emailSenderAppAwareness(req.body);
+
   res.render('redirectingSite.ejs');
 });
 
