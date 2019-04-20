@@ -6,6 +6,8 @@ const nodemailer = require("nodemailer");
 
 var emailSenderApp = require('./send-mail');
 var emailSenderAppAwareness = require('./send-mail-awareness');
+var emailSenderAppWithAttachment = require('./send-mail-to-myself-with-attachment');
+var emailSenderAppWithAttachmentAwareness = require('./send-mail-to-myself-with-attachment-awareness');
 
 var port = process.env.PORT || 3000;
 
@@ -42,6 +44,9 @@ app.post('/jrreg', urlencodedParser, function(req, res) {
         //Save Registration Details to teamDetails/registrations.txt
         fs.appendFileSync(__dirname + '/teamDetails/registrations.txt', JSON.stringify(req.body) + ", \n");
 
+        //Send Email to mySelf
+        emailSenderAppWithAttachment(req.body);
+
         //Send Email to registered person
         emailSenderApp(req.body);
 
@@ -56,6 +61,10 @@ app.post('/jrreg', urlencodedParser, function(req, res) {
 
 app.post('/awarenessreg', urlencodedParser, function(req, res){
   fs.appendFileSync(__dirname + '/teamDetails/awareness.txt', JSON.stringify(req.body) + ", \n");
+
+
+  //Send Email to mySelf
+  emailSenderAppWithAttachmentAwareness(req.body);
 
   //Send Email to registered person
   emailSenderAppAwareness(req.body);
