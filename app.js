@@ -86,7 +86,7 @@ app.post('/contactreq', urlencodedParser, function(req, res){
   //Send Email to registered person
   emailSenderAppAwareness(req.body);
 
-  res.render('redirectingSite.ejs');
+  res.render('thankyou.ejs');
 });
 
 
