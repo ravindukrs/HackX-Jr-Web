@@ -4,13 +4,13 @@ var emailSenderApp = function(details){
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'hackxjr.register@gmail.com',
-      pass: 'BlackPirateR$1996'
+      user: 'EMAIL REMOVED',
+      pass: 'PASSWORD REMOVED'
     }
   });
 
   var mailOptions = {
-    from: 'hackxjr.register@gmail.com',
+    from: 'EMAIL REMOVED',
     to: details.email,
     subject: `Team ${details.teamName} :: HackX Jr 2k19 - Registration Confirmation`,
     text: `Hello Team ${details.teamName},\n \t Thank you for registering with HackX Jr. Your proposal will

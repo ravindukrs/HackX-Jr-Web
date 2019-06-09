@@ -4,14 +4,14 @@ var contactmail = function(details) {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'hackxjr.register@gmail.com',
-      pass: 'BlackPirateR$1996'
+      user: 'EMAIL REMOVED',
+      pass: 'PASSWROD REMOVED'
     }
   });
 
   var mailOptions = {
-    from: 'hackxjr.register@gmail.com',
-    to: 'hackxjr.mit@gmail.com',
+    from: 'EMAIL REMOVED',
+    to: 'EMAIL REMOVED',
     subject: `Contact Request from ${details.fname} ${details.lname}`,
     text: `A contact request was made as follows,\n
           First Name: ${details.fname}\n

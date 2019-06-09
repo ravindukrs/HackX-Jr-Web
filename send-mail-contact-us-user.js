@@ -4,13 +4,13 @@ var emailSenderApp = function(details){
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'hackxjr.register@gmail.com',
-      pass: 'BlackPirateR$1996'
+      user: 'EMAIL REMOVED',
+      pass: 'PASSWORD REMOVED'
     }
   });
 
   var mailOptions = {
-    from: 'hackxjr.register@gmail.com',
+    from: 'EMAIL REMOVED',
     to: details.email,
     subject: `HackX Jr: Automated Reply`,
     text: `Dear Mr. ${details.fname} ${details.lname},\n

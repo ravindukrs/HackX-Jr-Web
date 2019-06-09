@@ -5,14 +5,14 @@ var emailSenderAppWithAttachmentAwareness = function(details) {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'hackxjr.register@gmail.com',
-      pass: 'BlackPirateR$1996'
+      user: 'EMAIL REMOVED',
+      pass: 'PASSWORD REMOVED'
     }
   });
 
   var mailOptions = {
-    from: 'hackxjr.register@gmail.com',
-    to: 'txtpure@gmail.com',
+    from: 'EMAIL REMOVED',
+    to: 'EMAIL REMOVED',
     subject: `Team ${details.teamName} from ${details.schoolName} - ${details.district}:: New Awareness Session Registration`,
     text: `New HackX Jr Registration:\n
           School: ${details.teamName}\n
